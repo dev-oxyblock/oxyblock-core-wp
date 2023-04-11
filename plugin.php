@@ -3,7 +3,7 @@
 Plugin Name:	Oxyblock Core WP
 Plugin URI:		https://core.oxyblock.xyz
 Description:	Modern CSS Framework based on Oxyblock UI
-Version:		0.2.3
+Version:		0.2.4
 Author:			Oxyblock
 Author URI:		https://oxyblock.com/
 License:		GPL-3.0+
