@@ -43,11 +43,11 @@ add_action( 'admin_init', 'oxyblockCoreWp_admin_init' );
 function oxyblockCoreWp_admin_init() {
     add_settings_section( 'oxyblockCoreWp_settings_section', 'CSS Options', '', 'oxyblockCoreWp' );
     add_settings_field( 'oxyblockCoreWp_tokens_css', 'Tokens CSS', 'oxyblockCoreWp_tokens_css_callback', 'oxyblockCoreWp', 'oxyblockCoreWp_settings_section' );
-    add_settings_field( 'oxyblockCoreWp_utility_css', 'Utility CSS', 'oxyblockCoreWp_utility_css_callback', 'oxyblockCoreWp', 'oxyblockCoreWp_settings_section' );
     add_settings_field( 'oxyblockCoreWp_components_css', 'Components CSS', 'oxyblockCoreWp_components_css_callback', 'oxyblockCoreWp', 'oxyblockCoreWp_settings_section' );
+    add_settings_field( 'oxyblockCoreWp_utility_css', 'Utility CSS', 'oxyblockCoreWp_utility_css_callback', 'oxyblockCoreWp', 'oxyblockCoreWp_settings_section' );
     register_setting( 'oxyblockCoreWp_settings', 'oxyblockCoreWp_tokens_css' );
-    register_setting( 'oxyblockCoreWp_settings', 'oxyblockCoreWp_utility_css' );
     register_setting( 'oxyblockCoreWp_settings', 'oxyblockCoreWp_components_css' );
+    register_setting( 'oxyblockCoreWp_settings', 'oxyblockCoreWp_utility_css' );
 }
 
 // Renderiza la página de configuración con los campos correspondientes
@@ -81,21 +81,21 @@ function oxyblockCoreWp_tokens_css_callback() {
     <?php
 }
 
-function oxyblockCoreWp_utility_css_callback() {
-    $utility_css = get_option( 'oxyblockCoreWp_utility_css', 'on' );
-    ?>
-    <label class="oba-theme-switch" for="oxyblockCoreWp_utility_css">
-        <input type="checkbox" id="oxyblockCoreWp_utility_css" name="oxyblockCoreWp_utility_css" <?php checked( $utility_css, 'on' ); ?>>
-        <div class="oba-slider oba-round"></div>
-    </label>
-    <?php
-}
-
 function oxyblockCoreWp_components_css_callback() {
     $components_css = get_option( 'oxyblockCoreWp_components_css', 'on' );
     ?>
     <label class="oba-theme-switch" for="oxyblockCoreWp_components_css">
         <input type="checkbox" id="oxyblockCoreWp_components_css" name="oxyblockCoreWp_components_css" <?php checked( $components_css, 'on' ); ?>>
+        <div class="oba-slider oba-round"></div>
+    </label>
+    <?php
+}
+
+function oxyblockCoreWp_utility_css_callback() {
+    $utility_css = get_option( 'oxyblockCoreWp_utility_css', 'on' );
+    ?>
+    <label class="oba-theme-switch" for="oxyblockCoreWp_utility_css">
+        <input type="checkbox" id="oxyblockCoreWp_utility_css" name="oxyblockCoreWp_utility_css" <?php checked( $utility_css, 'on' ); ?>>
         <div class="oba-slider oba-round"></div>
     </label>
     <?php
